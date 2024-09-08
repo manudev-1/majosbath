@@ -1,0 +1,24 @@
+name: Check JavaScript Syntax
+
+on: [push, pull_request]
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+
+      - name: Install ESLint (or any linter of your choice)
+        run: npm install eslint
+
+      - name: Run linter on client directory
+        run: npx eslint client/**/*.{js,jsx}
+
+      - name: Run linter on server directory
+        run: npx eslint server/**/*.{js,jsx,mjs}
