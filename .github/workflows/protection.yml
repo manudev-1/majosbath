@@ -1,0 +1,30 @@
+name: Branch Protection Rules
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR follows branch rules
+        run: |
+          SOURCE_BRANCH="${{ github.head_ref }}"
+          TARGET_BRANCH="${{ github.base_ref }}"
+          
+          # Condition for hotfix-* to main
+          if [[ "$SOURCE_BRANCH" == hotfix-* && "$TARGET_BRANCH" == "main" ]]; then
+            echo "PR from $SOURCE_BRANCH to $TARGET_BRANCH is allowed."
+            exit 0
+          fi
+          
+          # Condition for feat-* to develop
+          if [[ "$SOURCE_BRANCH" == feat-* && "$TARGET_BRANCH" == "develop" ]]; then
+            echo "PR from $SOURCE_BRANCH to $TARGET_BRANCH is allowed."
+            exit 0
+          fi
+
+          # If none of the conditions match, fail the check
+          echo "Error: PR from $SOURCE_BRANCH to $TARGET_BRANCH is not allowed."
+          exit 1
