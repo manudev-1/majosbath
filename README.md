@@ -3,6 +3,45 @@
 ## Descrizione
 Progetto ITALIANO che permette di recensire i bagni del ITI Ettore Majorana di Grugliasco
 
+## Collabora
+
+### Requisiti
+I requisiti per poter collaborare sono:
+- git
+- npm
+- nodemon global
+
+### Clona la repository
+Apri un terminale ed esegui:
+```bash
+git clone https://github.com/manudev-1/majosbath.git
+```
+
+### Installa i pacchetti Server e Client
+```bash
+C:\**\majosbath> cd server
+C:\**\majosbath\server> npm i
+...
+...
+C:\**\majosbath\server> cd ..\client
+C:\**\majosbath\client> npm i
+...
+...
+```
+
+### Avvia Server e Client offline
+Avrai bisogno di 2 terminali aperti, sul primo:
+```bash
+C:\**\majosbath\server> npm install -g nodemon
+...
+...
+C:\**\majosbath\server> nodemon ./**/app.js
+```
+Sul secondo:
+```bash
+C:\**\majosbath\client> npm run dev 
+```
+
 ## Rami
 Descrizione dei rami per creare Pull Request(**PR**) in maniera consona
 
