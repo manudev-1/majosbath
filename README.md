@@ -1,4 +1,4 @@
-# Majo's Bath
+![logo +  name - smaller](https://github.com/user-attachments/assets/e2595e18-91e1-4a14-868c-f94a91be75ac)
 
 ## Descrizione
 Progetto ITALIANO che permette di recensire i bagni del ITI Ettore Majorana di Grugliasco
