@@ -14,11 +14,22 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install ESLint (or any linter of your choice)
-        run: npm install eslint
+      - name: Install dependencies in client directory
+        working-directory: ./client
+        run: |
+          npm install
+          npm install eslint eslint-plugin-react
+
+      - name: Install dependencies in server directory
+        working-directory: ./server
+        run: |
+          npm install
+          npm install eslint
 
       - name: Run linter on client directory
-        run: npx eslint client/**/*.{js,jsx}
+        working-directory: ./client
+        run: npx eslint .
 
       - name: Run linter on server directory
-        run: npx eslint server/**/*.{js,jsx,mjs}
+        working-directory: ./server
+        run: npx eslint .
