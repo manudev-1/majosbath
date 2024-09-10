@@ -1,9 +1,49 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
 }
+
+.box {
+  background-color: #007fb5;
+  width: 20%;
+  margin-left: 0;
+  margin-right: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25vh;
+  color: white;
+}
+
+.kadwa-regular {
+  font-family: "Kadwa", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kadwa-bold {
+  font-family: "Kadwa", system-ui;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.logo-homepage {
+  height: 30vh;
+  width: 30%;
+
+}
+
+/*Old stuff here*/
 
 .logo {
   height: 6em;
