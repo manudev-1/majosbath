@@ -18,7 +18,9 @@ jobs:
         run: npm install eslint
 
       - name: Run linter on client directory
-        run: npx eslint client/**/*.{js,jsx}
-
+        working-directory: ./client
+        run: npx eslint
+        
       - name: Run linter on server directory
-        run: npx eslint server/**/*.{js,jsx,mjs}
+        working-directory: ./server
+        run: npx eslint
