@@ -35,6 +35,36 @@ class RegistrationTypeTable extends Table{
         await db.close()
         return resp
     }
+
+    static async post(Name){
+        const db = new DBManager()
+        await db.connect()
+
+        const resp = await db.query("INSERT INTO registrationTypes (name) VALUES ($1)", [Name])
+
+        await db.close()
+        return resp
+    }
+
+    static async put(Id, Name){
+        const db = new DBManager()
+        await db.connect()
+
+        const resp = await db.query("UPDATE registrationTypes SET name = $1 WHERE typeID = $2", [Name, Id])
+
+        await db.close()
+        return resp
+    }
+
+    static async delete(Id){
+        const db = new DBManager()
+        await db.connect()
+
+        const resp = await db.query("DELETE FROM registrationTypes WHERE roleID = $1", [Id])
+
+        await db.close()
+        return resp
+    }
 }
 
 export default RegistrationTypeTable
