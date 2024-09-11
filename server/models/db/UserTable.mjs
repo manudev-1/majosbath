@@ -46,6 +46,8 @@ class UserTable extends Table{
         return resp
     }
 
+    // TODO
+     
     static async put(Id, Nick, Email, Password, RoleFK){
         const db = new DBManager()
         await db.connect()
